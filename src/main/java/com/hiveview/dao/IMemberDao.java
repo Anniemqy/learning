@@ -4,8 +4,12 @@ import com.hiveview.model.Member;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author huxunqiang created on 2019/4/16
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
  */
+
 @Repository
 public interface IMemberDao {
 

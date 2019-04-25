@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author huxunqiang created on 2019/4/16
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
  */
+
 @Service
 public class IRegisterServiceImpl implements IRegisterService {
     @Autowired

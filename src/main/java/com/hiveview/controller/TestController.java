@@ -8,8 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author huxunqiang created on 2019/4/14
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
  */
+
 @Controller
 @RequestMapping("/test")
 public class TestController {

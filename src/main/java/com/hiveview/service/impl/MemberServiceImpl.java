@@ -6,6 +6,13 @@ import com.hiveview.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
+ */
+
 @Service
 public class MemberServiceImpl implements IMemberService {
 

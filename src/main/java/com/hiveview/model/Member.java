@@ -3,8 +3,12 @@ package com.hiveview.model;
 import java.util.Date;
 
 /**
- * @author huxunqiang created on 2019/4/16
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
  */
+
 public class Member {
     //	`sys_user_id` bigint(64) NOT NULL AUTO_INCREMENT,
     private Long id;

@@ -4,8 +4,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @author huxunqiang created on 2019/4/15
+ * Created by IntelliJ IDEA.
+ * User: xiaomeng
+ * Date: 2019-04-25
+ * Time: 18:09
  */
+
 public class Product {
     private Long id;
 
