@@ -15,9 +15,9 @@
     <json.version>2.7.4</json.version>
     <jackson.version>2.7.4</jackson.version>
     <!-- mybatis-->
-    <mybatis.version>3.2.6</mybatis.version>
+    <mybatis.version>3.3.0</mybatis.version>
     <!-- mybatis与Spring的粘合剂-->
-    <mybatis-spring.version>1.2.2</mybatis-spring.version>
+    <mybatis-spring.version>1.2.3</mybatis-spring.version>
     <!-- mysql数据库驱动-->
     <mysql-connector-java.version>5.1.30</mysql-connector-java.version>
     <!-- 数据库连接池-->
@@ -81,6 +81,14 @@
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
     </dependency>
+
+    <!-- 加密 -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.2</version>
+    </dependency>
+
     <!--JSON解析-->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -208,8 +216,18 @@
     <resources>
       <!--包含xml Mapper文件-->
       <resource>
-        <directory>${basedir}/src/main/java</directory>
+        <directory>src/main/java</directory>
         <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.properties</include>
           <include>**/*.xml</include>
         </includes>
       </resource>

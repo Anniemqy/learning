@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author huxunqiang created on 2019/4/16
@@ -23,5 +24,23 @@ public class VerifyCodeUtil {
             return result;
         }
         return result;
+    }
+
+    /**
+     * 生成指定位数的验证码
+     * @param bix
+     * @return
+     */
+    public static String createVerifyCode(int bix){
+        String code = "";
+        if(bix > 0){
+            StringBuilder sb = new StringBuilder(bix);
+            Random rand = new Random();
+            for(int i = 0; i < bix; i++){
+                sb.append(rand.nextInt(bix));
+            }
+            code = sb.toString();
+        }
+        return code;
     }
 }

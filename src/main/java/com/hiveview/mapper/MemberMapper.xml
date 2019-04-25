@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hiveview.dao.IMemberDao" >
+    <insert id="insertSelective" parameterType="com.hiveview.model.Member" useGeneratedKeys="true" keyProperty="id">
+        insert into j_member
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="headPortrait != null" >
+                head_portrait,
+            </if>
+            <if test="sex != null" >
+                sex,
+            </if>
+            <if test="level != null" >
+                level,
+            </if>
+            <if test="workTime != null" >
+                work_time,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="description != null" >
+                description,
+            </if>
+            <if test="mobile != null" >
+                mobile,
+            </if>
+            <if test="qq != null" >
+                qq,
+            </if>
+            <if test="checkStatus != null" >
+                check_status,
+            </if>
+            <if test="addTime != null" >
+                add_time,
+            </if>
+            <if test="updateTime != null" >
+                update_time,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="realNameAuthentication != null" >
+                real_name_authentication,
+            </if>
+            <if test="companyId != null" >
+                company_id,
+            </if>
+            <if test="type != null" >
+                type,
+            </if>
+            <if test="personalProfile != null" >
+                personal_profile,
+            </if>
+            <if test="inviteCode != null" >
+                invite_code
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="name != null" >
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="headPortrait != null" >
+                #{headPortrait,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                #{sex,jdbcType=CHAR},
+            </if>
+            <if test="level != null" >
+                #{level,jdbcType=INTEGER},
+            </if>
+            <if test="workTime != null" >
+                #{workTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null" >
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="checkStatus != null" >
+                #{checkStatus,jdbcType=TINYINT},
+            </if>
+            <if test="addTime != null" >
+                #{addTime,jdbcType=DATE},
+            </if>
+            <if test="updateTime != null" >
+                #{updateTime,jdbcType=DATE},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="realNameAuthentication != null" >
+                #{realNameAuthentication,jdbcType=TINYINT},
+            </if>
+            <if test="companyId != null" >
+                #{companyId,jdbcType=BIGINT},
+            </if>
+            <if test="type != null" >
+                #{type,jdbcType=TINYINT},
+            </if>
+            <if test="personalProfile != null" >
+                #{personalProfile,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="inviteCode != null" >
+                #{inviteCode,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.hiveview.model.Member">
+        update j_member
+        <set >
+            <if test="name != null" >
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="headPortrait != null" >
+                head_portrait = #{headPortrait,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                sex = #{sex,jdbcType=CHAR},
+            </if>
+            <if test="level != null" >
+                level = #{level,jdbcType=INTEGER},
+            </if>
+            <if test="workTime != null" >
+                work_time  = #{workTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="password != null" >
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null" >
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null" >
+                mobile = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null" >
+                qq = #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="checkStatus != null" >
+                check_status = #{checkStatus,jdbcType=TINYINT},
+            </if>
+            <if test="addTime != null" >
+                add_time = #{addTime,jdbcType=DATE},
+            </if>
+            <if test="updateTime != null" >
+                update_time = #{updateTime,jdbcType=DATE},
+            </if>
+            <if test="status != null" >
+                status = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="realNameAuthentication != null" >
+                real_name_authentication = #{realNameAuthentication,jdbcType=TINYINT},
+            </if>
+            <if test="companyId != null" >
+                company_id = #{companyId,jdbcType=BIGINT},
+            </if>
+            <if test="type != null" >
+                type = #{type,jdbcType=TINYINT},
+            </if>
+            <if test="address != null" >
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="personalProfile != null" >
+                personal_profile = #{personalProfile,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="needViewCount != null" >
+                need_view_count = #{needViewCount,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="adviserType != null" >
+                adviser_type = #{adviserType},
+            </if>
+            <if test="areaCode != null" >
+                area_code = #{areaCode,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="relateCompanyDate != null" >
+                relate_company_date = #{relateCompanyDate,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
