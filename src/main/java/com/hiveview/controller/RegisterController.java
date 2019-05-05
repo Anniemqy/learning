@@ -53,7 +53,7 @@ public class RegisterController {
 //        result = SmsSendUtil.validateSmsAndImgCode(request);
 
         Boolean flag = false;
-        String msg = "";
+        String msg = "该账号已被注册";
 
         if(!registerService.checkPhoneRegister(mobile)){
             // 未注册，进行注册

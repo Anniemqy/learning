@@ -197,4 +197,8 @@
         </set>
         where id = #{id}
     </update>
+
+    <select id="verifyPhoneRegister" parameterType="String" resultType="Integer">
+        SELECT count(1) FROM j_member WHERE status = 1 AND mobile = #{phone};
+    </select>
 </mapper>
