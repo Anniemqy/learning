@@ -13,9 +13,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IMemberDao {
 
-    int insertSelective(Member member); //todo 和传Member record有什么区别，record是Member的一个别名吗？
+    int insertSelective(Member member);
 
     int verifyPhoneRegister(String phone);
+
+    Member get(Member member);
 
     int updateByPrimaryKeySelective(Member member);
 }

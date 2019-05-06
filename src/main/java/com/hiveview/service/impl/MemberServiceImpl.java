@@ -26,6 +26,18 @@ public class MemberServiceImpl implements IMemberService {
     }
 
     @Override
+    public Member getMemberByMobile(String mobile) {
+        Member member = new Member();
+        member.setMobile(mobile);
+        return memberDao.get(member);
+    }
+
+    @Override
+    public Member getMemberInfo(Member member){
+        return memberDao.get(member);
+    }
+
+    @Override
     public Integer updateMember(Member member) {
         return memberDao.updateByPrimaryKeySelective(member);
     }
