@@ -1,12 +1,11 @@
 package com.hiveview.controller;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.awt.image.ImageWatched;
 
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,26 +37,25 @@ public class TestController {
 //        System.out.println(res);
 
         // 有效的括号
-
-        // 有效的括号
 //        Boolean res = TestController.validBrackets("()");
 //        System.out.println(res);
 
         // 有效的括号
 
         // 合并两个有序链表 todo
-//        LinkedList<Integer> list1 = new LinkedList<Integer>();
-//        list1.add(1);
-//        list1.add(2);
-//        list1.add(4);
-//        LinkedList<Integer> list2 = new LinkedList<Integer>();
-//        list2.add(1);
-//        list2.add(3);
-//        list2.add(4);
-//        System.out.println(list1);
-//        System.out.println(list2);
-//        System.exit(0);
-//        LinkedList res = TestController.mergeTwoLists(list1, list2);
+        ListNode list1 = new ListNode(1);
+        ListNode list2 = new ListNode(3);
+        ListNode list3 = new ListNode(5);
+        list1.next = list2;
+        list2.next = list3;
+
+        ListNode list5 = new ListNode(2);
+        ListNode list6 = new ListNode(7);
+        ListNode list7 = new ListNode(8);
+        list5.next = list6;
+        list6.next = list7;
+        ListNode res = TestController.mergeTwoLists(list1, list5);
+        print(res);
 
         // 删除排序数组中的重复项
 //        int[] nums = {0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 5, 7, 7};
@@ -76,6 +74,14 @@ public class TestController {
         // 实现strStr，第二个字符串在第一个字符串中首次出现的位置
         String result = TestController.countAndSay(8);
         System.out.println(result);
+    }
+
+    private static void print(ListNode res) {
+        ListNode temp = res;
+        while (temp != null && temp.val != null) {
+            System.out.println(temp.val);
+            temp = temp.next;
+        }
     }
 
     public static String countAndSay(int n) {
@@ -140,24 +146,32 @@ public class TestController {
         return num + 1;
     }
 
-//    public static LinkedList mergeTwoLists(LinkedList l1, LinkedList l2) {
-//        ListNode dummy = new ListNode(0);
-//        ListNode p = dummy;
-//        while (l1 != null && l2 != null){
-//            if (l1.val < l2.val){
-//                p.next = l1;
-//                l1 = l1.next;
-//            }
-//            else {
-//                p.next = l2;
-//                l2 = l2.next;
-//            }
-//            p = p.next;
-//        }
-//        if (l1 == null) p.next = l2;
-//        if (l2 == null) p.next = l1;
-//        return dummy.next;
-//    }
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode cur = dummy;
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                cur.next = l1;
+                l1 = l1.next;
+            } else {
+                cur.next = l2;
+                l2 = l2.next;
+            }
+            cur = cur.next;
+        }
+        cur.next = (l1 != null) ? l1 : l2;
+        return dummy.next;
+    }
+
+    private static class ListNode {
+        public Integer val;
+        public ListNode next;
+        public ListNode prev;
+
+        public ListNode(Integer val) {
+            this.val = val;
+        }
+    }
 
     // 有效的括号
     public static Boolean validBrackets(String str){
