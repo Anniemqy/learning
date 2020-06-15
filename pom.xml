@@ -10,7 +10,7 @@
 
   <properties>
     <!--Spring-->
-    <spring.version>4.1.5.RELEASE</spring.version>
+    <spring.version>5.2.7.RELEASE</spring.version>
     <!--Json处理-->
     <json.version>2.7.4</json.version>
     <jackson.version>2.7.4</jackson.version>
